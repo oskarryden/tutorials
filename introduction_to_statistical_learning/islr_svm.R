@@ -1,5 +1,26 @@
-library(ISLR)
+library(ISLR2)
 library(e1071)
+
+set.seed(2)
+x <- matrix(rnorm(20 * 2), ncol = 2)
+y <- c(rep(-1, 10), rep(1, 10))
+x[y==1,] <- x[y==1,] + 1
+plot(x, pch = 20, col = 5-y)
+
+dat <- data.frame(x = x, y = as.factor(y))
+svmf <- svm(y~., data = dat, kernel = "linear", cost = 2, scale = FALSE)
+svmf |> summary()
+plot(svmf, dat)
+
+
+svmf <- svm(y~., data = dat, kernel = "polynomial", degree = 2, cost = 1, scale = FALSE)
+plot(svmf, dat)
+
+svmf <- svm(y~., data = dat, kernel = "polynomial", degree = 4, cost = 0.5, scale = FALSE)
+plot(svmf, dat)
+
+svmf <- svm(y~., data = dat, kernel = "radial", gamma = 0.5, cost = 2, scale = FALSE)
+plot(svmf, dat)
 
 set.seed(1)
 x <- matrix(rnorm(20*2), ncol = 2)
