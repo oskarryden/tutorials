@@ -26,4 +26,27 @@ length(x)
 is.call(x) # true
 is.call(quote(y)) # false: numbers are expressions already
 
+# recursion
+is.atomic(4)
+x <- 4
+is.atomic(x)
+
+is.name(5)
+f <- function(x) is.name(x)
+f(quote(x))
+
+is.call(x)
+is.call(5)
+is.call(quote(x))
+y <- 1
+is.call(x+y)
+is.call(quote(x+y))
+
+z <- pairlist(a = 1, b = 2, c = 3)
+is.pairlist(z)
+class(z)
+is.list(z)
+is.pairlist(as.list(z))
+
+
 
