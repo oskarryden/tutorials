@@ -1,19 +1,18 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
 
-    // Declare
-    int a, b;
-    int result;
+    string x;
 
-    // Define
-    a = 5;
-    b = 2;
-    a = a + 1;
-    result = a - b;
+    cout << "a" << endl;
+    cout << 120 << endl;
+    cout << 3.14 << endl;
 
-    // Print
-    cout << result << endl;
+    getline(cin, x);
+    cout << x << endl;
+
     return 0;
 }
+
