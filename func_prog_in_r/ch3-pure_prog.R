@@ -1,4 +1,7 @@
 # Recursion
+# For recursion, identify the base case and the recursive case
+# Base case: the case where the function returns a value without calling itself
+# Recursive case: the case where the function calls itself
 linear_search <- function(element, sequence) {
     if (is_empty(sequence)) {
         return(FALSE)
@@ -120,6 +123,11 @@ find_duplicates(x)
 vector_rm_duplicates(x)
 
 # tail recursion
+# tail recursion is when the recursive call is the last thing the function does
+# tail recursion can be optimized by the compiler to be iterative
+# tail recursion is not possible in R
+
+
 acc_factorial <- function(n, acc = 1) {
     if (n == 1) acc
     else acc_factorial(n-1, acc * n)
